@@ -32,7 +32,12 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
     
 st.title("*** ASSISSTRO - AI ***")
-st.markdown("""I am a AI assistant for all your astrology needs.""")
+st.markdown("""I am a AI assistant for all your astrology needs. You can find out :
+            - How will your day be?
+            - How is this year going to be for you?
+            - Is your Zodic sign compatible with your name ?
+            - Discover your compatibility with your partner using just your names or dates of birth.
+            and much more....""")
 # Display the existing chat messages via `st.chat_message`.
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -46,5 +51,6 @@ if user_input := st.chat_input("What is your query?"):
     with st.chat_message("assistant"):
         response = st.write(bot_reply)
     st.session_state.messages.append({"role": "assistant", "content": bot_reply})
+
 
 
